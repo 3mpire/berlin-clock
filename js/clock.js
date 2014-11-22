@@ -47,8 +47,8 @@ function startClock() {
         }
 
         // Fourth row of lamps
-        if (fiveMinutes % 5 > 0) {
-            var singleMinutes = Math.floor(clockMinutes - (Math.floor(fiveMinutes) * 5));
+        if (fiveMinutes % 5 > 0 || fiveMinutes === 0) {
+            var singleMinutes = Math.floor(clockMinutes - (fiveMinutes * 5));
             for (var i = 1; i <= singleMinutes; i++) {
                 $("#m1-" + i).removeClass("off");
             }
