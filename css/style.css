@@ -1,0 +1,49 @@
+.clock {
+    width: 16em;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+.circle {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 1em solid rgba(204, 204, 204, 1);
+    margin: 0 auto 0 auto;
+}
+.lamp-row {
+    border-radius: 1em;
+    background: rgba(204, 204, 204, 1);
+    display: flex;
+    padding: 0.5em;
+    margin: 0.5em 0 0 0;
+}
+.rectangle-large, .rectangle-small {
+    border-radius: 0.5em;
+    height: 2.5em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    margin: 0.1em;
+}
+.rectangle-large {
+    width: 4em;
+}
+.rectangle-small {
+    width: 1.45em;
+}
+.red {
+    background: rgba(255, 0, 0, 1);
+}
+.red.off {
+    background: rgba(255, 0, 0, 0.5);
+}
+.yellow {
+    background: rgba(255, 255, 0, 1);
+}
+.yellow.off {
+    background: rgba(255, 255, 0, 0.4);
+}
+#display {
+    margin-top: 1em;
+    text-align: center;
+}
