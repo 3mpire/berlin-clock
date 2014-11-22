@@ -1,6 +1,10 @@
+body {
+    background: rgba(0,0,0,0.35);
+}
+
 .clock {
     width: 16em;
-    margin: 0 auto;
+    margin: 3em auto 0 auto;
     font-family: sans-serif;
 }
 .circle {
@@ -46,4 +50,12 @@
 #display {
     margin-top: 1em;
     text-align: center;
+}
+footer {
+    margin: 2em auto 0 auto;
+    text-align: center;
+}
+footer a {
+    font-size: 3.5em;
+    color: black;
 }
