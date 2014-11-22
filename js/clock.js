@@ -13,14 +13,14 @@ function startClock() {
             fiveHours = Math.floor(clockHours / 5),
             fiveMinutes = Math.floor(clockMinutes / 5);
 
-        $("#0").toggleClass("off");
+        $(".circle").toggleClass("off");
         $("#display").text(clockHours + ":" + ((clockMinutes < 10) ? "0" + clockMinutes : clockMinutes));
         
         $("[id^=h]").addClass("off");
         $("[id^=m]").addClass("off");
         
         // First row of lamps
-        if (fiveHours >= 1) {
+        if (fiveHours > 0) {
             for (var i = 1; i <= fiveHours; i++) {
                 $("#h5-" + i).removeClass("off");
             }
@@ -28,7 +28,7 @@ function startClock() {
 
         // Second row of lamps
         if (fiveHours % 5 > 0) {
-            var singleHours = Math.floor(clockHours - (Math.floor(fiveHours) * 5));
+            var singleHours = Math.floor(clockHours - (fiveHours * 5));
 
             for (var i = 1; i <= singleHours; i++) {
                 $("#h1-" + i).removeClass("off");
@@ -36,7 +36,7 @@ function startClock() {
         }
 
         // Third row of lamps
-        if (fiveMinutes >= 1) {
+        if (fiveMinutes > 0) {
             for (var i = 1; i <= fiveMinutes; i++) {
                 if (i % 3 == 0) {
                     $("#m5-" + i).removeClass("off");
