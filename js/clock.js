@@ -10,11 +10,14 @@ function startClock() {
         var clockDate = new Date(),
             clockHours = clockDate.getHours(),
             clockMinutes = clockDate.getMinutes(),
+            clockSeconds = clockDate.getSeconds(),
             fiveHours = Math.floor(clockHours / 5),
-            fiveMinutes = Math.floor(clockMinutes / 5);
+            fiveMinutes = Math.floor(clockMinutes / 5),
+            singleHours = Math.floor(clockHours - (fiveHours * 5)),
+            singleMinutes = Math.floor(clockMinutes - (fiveMinutes * 5));
 
         $(".circle").toggleClass("off");
-        $("#display").text(clockHours + ":" + ((clockMinutes < 10) ? "0" + clockMinutes : clockMinutes));
+        $("#display").text(clockHours + ":" + ((clockMinutes < 10) ? "0" + clockMinutes : clockMinutes) + ":" + ((clockSeconds < 10) ? "0" + clockSeconds : clockSeconds));
         
         $("[id^=h]").addClass("off");
         $("[id^=m]").addClass("off");
@@ -28,8 +31,6 @@ function startClock() {
 
         // Second row of lamps
         if (fiveHours % 5 > 0) {
-            var singleHours = Math.floor(clockHours - (fiveHours * 5));
-
             for (var i = 1; i <= singleHours; i++) {
                 $("#h1-" + i).removeClass("off");
             }
@@ -47,13 +48,12 @@ function startClock() {
         }
 
         // Fourth row of lamps
-        if (fiveMinutes % 5 > 0 || fiveMinutes === 0) {
-            var singleMinutes = Math.floor(clockMinutes - (fiveMinutes * 5));
+        if (singleMinutes > 0) {
             for (var i = 1; i <= singleMinutes; i++) {
                 $("#m1-" + i).removeClass("off");
             }
         }
-
+        
         setTimeout(tick, delay);
     }
 
