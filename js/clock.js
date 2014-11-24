@@ -30,7 +30,7 @@ function startClock() {
         }
 
         // Second row of lamps
-        if (fiveHours % 5 > 0) {
+        if (singleHours > 0) {
             for (var i = 1; i <= singleHours; i++) {
                 $("#h1-" + i).removeClass("off");
             }
