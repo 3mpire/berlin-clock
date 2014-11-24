@@ -68,6 +68,7 @@ footer a {
     }
     .clock {
         width: 20rem;
+        margin: 1em auto 0 auto;
     }
     .lamp-row {
         padding: 0.5rem 0.5rem 0.25rem 0.5rem;
