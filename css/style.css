@@ -28,7 +28,7 @@ body {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     margin: 0.1em;
-    display: inline;
+    display: inline-block;
 }
 .rectangle-large {
     width: 4em;
